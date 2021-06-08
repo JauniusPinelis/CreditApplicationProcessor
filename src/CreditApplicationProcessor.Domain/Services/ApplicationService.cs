@@ -31,7 +31,12 @@ namespace CreditApplicationProcessor.Domain.Services
 
         private ApplicationResponse GenerateResponse(ApplicationRequest request)
         {
-            return null;
+            return new ApplicationResponse()
+            {
+                //Decision = 
+            };
         }
+
+        
     }
 }
