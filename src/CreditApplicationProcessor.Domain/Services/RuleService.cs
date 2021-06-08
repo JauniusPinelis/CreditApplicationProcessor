@@ -1,9 +1,8 @@
-﻿using CreditApplicationProcessor.Domain.Rules;
+﻿using CreditApplicationProcessor.Domain.Configurations;
+using CreditApplicationProcessor.Domain.Exceptions;
+using CreditApplicationProcessor.Domain.Rules;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CreditApplicationProcessor.Domain.Services
 {
@@ -11,11 +10,6 @@ namespace CreditApplicationProcessor.Domain.Services
     {
         private readonly List<DecisionRule> _decisionRules = RulesConfiguration.GetDecisionRules();
         private readonly List<InterestRateRule> _interestRateRules = RulesConfiguration.GetInterestRateRules();
-
-        public RuleService()
-        {
-
-        }
 
         public bool CalculateDecision(int amount)
         {
@@ -39,7 +33,7 @@ namespace CreditApplicationProcessor.Domain.Services
             }
 
             // Did not find any valid interest rate rule, throw exception
-            throw new ArgumentException("Did not find applicable interest rule");
+            throw new ConfigurationException("Did not find applicable interest rule");
         }
     }
 }

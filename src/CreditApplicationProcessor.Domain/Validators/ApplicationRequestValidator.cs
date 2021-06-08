@@ -1,10 +1,5 @@
 ﻿using CreditApplicationProcessor.Domain.Dtos;
 using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CreditApplicationProcessor.Domain.Validators
 {
@@ -16,6 +11,5 @@ namespace CreditApplicationProcessor.Domain.Validators
             RuleFor(a => a.PreAmount).GreaterThanOrEqualTo(0);
             RuleFor(a => a.Term).NotEmpty().GreaterThanOrEqualTo(1);
         }
-        
     }
 }

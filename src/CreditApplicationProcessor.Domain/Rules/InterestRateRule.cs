@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreditApplicationProcessor.Domain.Rules.Abstract;
 
 namespace CreditApplicationProcessor.Domain.Rules
 {
-    public class InterestRateRule
+    public class InterestRateRule : Rule
     {
-        public int? Min { get; set; }
-
-        public int? Max { get; set; }
-
         public int InterestRate { get; set; }
     }
 }

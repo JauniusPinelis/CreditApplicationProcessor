@@ -1,10 +1,5 @@
 ﻿using CreditApplicationProcessor.Domain.Services;
 using FluentAssertions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace CreditApplicationProcessor.UnitTests.Services
@@ -26,7 +21,10 @@ namespace CreditApplicationProcessor.UnitTests.Services
         }
 
         [Theory]
-        [InlineData(2000, false)]
+        [InlineData(19999, 3)]
+        [InlineData(20000, 4)]
+        [InlineData(40000, 5)]
+        [InlineData(79999, 6)]
         public void CalculateInterestRate_GivenFutureDebt_ReturnsCorrectInterestRate(int futureDebt, int expectedRate)
         {
             var ruleService = new RuleService();

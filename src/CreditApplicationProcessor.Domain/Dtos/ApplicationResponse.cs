@@ -11,11 +11,11 @@ namespace CreditApplicationProcessor.Domain.Dtos
         /// <summary>
         /// Yes or No
         /// </summary>
-        public bool Decision { get; set; }
+        public bool Decision { get; init; }
 
         /// <summary>
         /// Interest Rate in %
         /// </summary>
-        public int InterestRate { get; set; }
+        public int InterestRate { get; init; }
     }
 }

@@ -1,20 +1,18 @@
 ﻿using CreditApplicationProcessor.Domain.Dtos;
 using FluentValidation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CreditApplicationProcessor.Domain.Services
 {
     public class ApplicationService
     {
         private readonly ValidationService _validationService;
+        private readonly RuleService _ruleService;
 
-        public ApplicationService(ValidationService validationService)
+        public ApplicationService(ValidationService validationService, RuleService ruleService)
         {
             _validationService = validationService ?? throw new ArgumentNullException(nameof(validationService));
+            _ruleService = ruleService ?? throw new ArgumentNullException(nameof(ruleService));
         }
 
         public ApplicationResponse ProcessCreditApplication(ApplicationRequest request)
@@ -33,10 +31,9 @@ namespace CreditApplicationProcessor.Domain.Services
         {
             return new ApplicationResponse()
             {
-                //Decision = 
+                Decision = _ruleService.CalculateDecision(request.Amount),
+                InterestRate = _ruleService.CalculateInterestRate(request.Amount + request.PreAmount)
             };
         }
-
-        
     }
 }
