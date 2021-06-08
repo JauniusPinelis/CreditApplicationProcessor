@@ -9,25 +9,8 @@ namespace CreditApplicationProcessor.Domain.Services
 {
     public class RuleService
     {
-        private readonly List<DecisionRule> _decisionRules = new List<DecisionRule>()
-        {
-            new DecisionRule()
-            {
-                Max = 1999,
-                Decision = false
-            },
-             new DecisionRule()
-            {
-                Min = 2000,
-                Max = 68999,
-                Decision = true
-            },
-              new DecisionRule()
-            {
-                Min = 69000,
-                Decision = false
-            },
-        };
+        private readonly List<DecisionRule> _decisionRules = RulesConfiguration.GetDecisionRules();
+        private readonly List<InterestRateRule> _interestRateRules = RulesConfiguration.GetInterestRateRules();
 
         public RuleService()
         {
@@ -44,6 +27,19 @@ namespace CreditApplicationProcessor.Domain.Services
             }
 
             return false;
+        }
+
+        public int CalculateInterestRate(int totalDebt)
+        {
+            foreach (var rule in _interestRateRules)
+            {
+                if ((totalDebt >= rule.Min || !rule.Min.HasValue) &&
+                    (totalDebt <= rule.Max || !rule.Max.HasValue))
+                    return rule.InterestRate;
+            }
+
+            // Did not find any valid interest rate rule, throw exception
+            throw new ArgumentException("Did not find applicable interest rule");
         }
     }
 }

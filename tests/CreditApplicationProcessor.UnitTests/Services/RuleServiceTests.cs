@@ -24,5 +24,16 @@ namespace CreditApplicationProcessor.UnitTests.Services
 
             decision.Should().Be(expectedDecision);
         }
+
+        [Theory]
+        [InlineData(2000, false)]
+        public void CalculateInterestRate_GivenFutureDebt_ReturnsCorrectInterestRate(int futureDebt, int expectedRate)
+        {
+            var ruleService = new RuleService();
+
+            var interestRate = ruleService.CalculateInterestRate(futureDebt);
+
+            interestRate.Should().Be(expectedRate);
+        }
     }
 }
