@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CreditApplicationProcessor.Domain.Dtos
 {
-    public class CreditApplicationRequest
+    public class ApplicationRequest
     {
         /// <summary>
         /// Credit Amount

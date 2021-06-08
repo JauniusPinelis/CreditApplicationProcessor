@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CreditApplicationProcessor.Domain.Dtos
 {
-    public class CreditApplicationResponse
+    public class ApplicationResponse
     {
         /// <summary>
         /// Yes or No
