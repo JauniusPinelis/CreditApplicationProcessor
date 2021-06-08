@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditApplicationProcessor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditApplicationProcessor.Domain", "src\CreditApplicationProcessor.Domain\CreditApplicationProcessor.Domain.csproj", "{9FEC6CC2-E383-415C-8456-D7B64D15771D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditApplicationProcessor.UnitTests", "tests\CreditApplicationProcessor.UnitTests\CreditApplicationProcessor.UnitTests.csproj", "{F99F9DDC-6FBB-49CE-A933-8AF00073300B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9FEC6CC2-E383-415C-8456-D7B64D15771D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FEC6CC2-E383-415C-8456-D7B64D15771D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FEC6CC2-E383-415C-8456-D7B64D15771D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F99F9DDC-6FBB-49CE-A933-8AF00073300B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99F9DDC-6FBB-49CE-A933-8AF00073300B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99F9DDC-6FBB-49CE-A933-8AF00073300B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99F9DDC-6FBB-49CE-A933-8AF00073300B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C6120F96-7181-40F9-AE0E-605C2496CCDC} = {CFF1E2E1-156E-4CBC-9F49-D69BA2ECD99B}
 		{9FEC6CC2-E383-415C-8456-D7B64D15771D} = {CFF1E2E1-156E-4CBC-9F49-D69BA2ECD99B}
+		{F99F9DDC-6FBB-49CE-A933-8AF00073300B} = {032ED0B2-D07E-448C-99F1-79DBAE65E7EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F0173389-7DE5-4BB1-AC28-61FD97340FD9}
